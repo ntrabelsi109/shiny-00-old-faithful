@@ -26,7 +26,7 @@ global_health <- global_health |>
   ) |> 
   filter(Year == 2021, !is.na(Classification))
 
-world_map <- read_sf("C:/Users/15857/Downloads/DANL-310/ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp") |> 
+world_map <- read_sf("ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp") |> 
   rename("Country_Code" = "SOV_A3") |> 
   filter(Country_Code != "ATA") |> 
   mutate(Country_Code = recode(Country_Code,
